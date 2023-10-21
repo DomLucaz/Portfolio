@@ -18,18 +18,6 @@ body{
     background-size: cover;
 }
 
-/************************* General *****************************/
-
-
-.about, .skills, .projects, .contact{
-    height: 100%;
-    height: 100dvh;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-}
-
 /************************* Navbar *****************************/
 
 .layout-nav{
@@ -91,6 +79,7 @@ header{
     flex-direction: column;
     max-width: 1400px;
     width: 100%;
+    order: 1px solid red;
 }
 .intro{
     display: flex;
@@ -170,11 +159,97 @@ header{
 
 /************************* About *****************************/
 
+.layout-about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100dvh;
+    border: 1px solid red;
+    background-color: white;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.layout-box{
+    display: flex;
+    flex-direction: row;
+}
+
+.content-about{
+    display: flex;
+    /* border: 1px solid red; */
+    
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid black;
+}
+
 /************************* Skills *****************************/
+.layout-skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100dvh;
+    border: 1px solid red;
+    background-color: white;
+}
+.skills{
+    display: flex;
+    flex-direction: column;
+    /* width: max-content; */
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
 
+.skill-box{
+    display: flex;
+}
+
+.layout-tech{
+    display: flex;
+}
+
+.tech-box{
+    display: flex;
+}
 /************************* Projects *****************************/
-
+.projects{
+    height: 100%;
+    height: 100dvh;
+    height: 100vh;
+    display: flex;
+}
 /************************* Contact *****************************/
+
+.layout-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100dvh;
+    border: 1px solid red;
+    background-color: white;
+}
+
+.contact{
+    display: flex;
+    flex-direction: row;
+    /* width: max-content; */
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
 .contact form {
     display: flex;
     flex-direction: column;
