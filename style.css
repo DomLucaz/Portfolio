@@ -5,6 +5,8 @@ html{
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
 }
 
 body{
@@ -162,7 +164,7 @@ header{
     flex-direction: column;
     justify-content: center;
     height: 100dvh;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     background-color: white;
 }
 
@@ -192,12 +194,18 @@ header{
     font-weight: 700;
 }
 
-.carousel{
+#about-carousel{
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: calc((100% / 4) - 12px);
     gap: 20px;
     overflow: hidden;
+    scroll-padding: 1rem;
+}
+
+#about-carousel.dragging .card{
+    cursor: grab;
+    user-select: none;
 }
 
 .content-about{
@@ -213,6 +221,7 @@ header{
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.33);
     justify-content: center;
     padding: 36px;
+    text-align: start;
 }
 
 .card-title{
@@ -237,10 +246,6 @@ header{
     margin: 10px 0 0 20px;
 }
 
-.carousel.dragging .card{
-    cursor: grab;
-    user-select: none;
-}
 
 /************************* Skills *****************************/
 .layout-skills{
@@ -248,28 +253,58 @@ header{
     flex-direction: column;
     justify-content: center;
     height: 100dvh;
-    border: 1px solid red;
     background-color: white;
 }
 .skills{
     display: flex;
     flex-direction: column;
-    /* width: max-content; */
     max-width: 1400px;
     margin: 0 auto;
-    border: 1px solid red;
 }
 
-.skill-box{
-    display: flex;
+.skills h2{
+    margin-bottom: 70px;
+    color: #000;
+    font-size: 32px;
+    font-weight: 700; 
 }
 
-.layout-tech{
+.skill-details{
     display: flex;
+    gap: 52px;
+    margin-bottom: 114px;
+    text-align: left;
 }
 
-.tech-box{
+.skill-card h3{
+    margin: 16px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#tech-carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 6) - 12px);
+    gap: 20px;
+    overflow: hidden;
+}
+
+#tech-carousel.dragging .tech-card{
+    cursor: grab;
+    user-select: none;
+}
+
+.tech-card{
     display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.tech-card p{
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 28px;
 }
 /************************* Projects *****************************/
 .projects{

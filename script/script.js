@@ -1,24 +1,28 @@
-const carousel = document.getElementById("carousel");
+const carousels = document.querySelectorAll(".carousel");
 
 let isDragging = false, startX, startScrollLeft;
 
-const dragStart = (e) =>{
+const dragStart = (e) => {
     isDragging = true;
-    carousel.classList.add("dragging");
+    e.currentTarget.classList.add("dragging"); // Usar e.currentTarget para acessar o elemento atual
     startX = e.pageX;
-    startScrollLeft = carousel.scrollLeft;
+    startScrollLeft = e.currentTarget.scrollLeft; // Usar e.currentTarget para acessar o elemento atual
 }
 
-const dragging = (e) =>{
+const dragging = (e) => {
     if (!isDragging) return;
-    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+    e.currentTarget.scrollLeft = startScrollLeft - (e.pageX - startX); // Usar e.currentTarget para acessar o elemento atual
 }
 
-const dragStop = () =>{
+const dragStop = () => {
     isDragging = false;
-    carousel.classList.remove("dragging");
+    carousels.forEach(carousel => {
+        carousel.classList.remove("dragging"); // Remover a classe "dragging" de todos os carrosseis
+    });
 }
 
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mousemove", dragging);
-carousel.addEventListener("mouseup", dragStop);
+carousels.forEach(carousel => {
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    carousel.addEventListener("mouseup", dragStop);
+});
