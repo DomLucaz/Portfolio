@@ -179,7 +179,7 @@ header{
     background: #FFF;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
-    width: 80%;
+    width: 60%;
     padding: 73px 123px 72px 123px;
     justify-content: center;
     margin: 0 auto;
@@ -205,7 +205,7 @@ header{
     /* border: 1px solid red; */
 }
 
-.box{
+.card{
     display: flex;
     flex-direction: column;
     border-radius: 8px;
@@ -215,7 +215,7 @@ header{
     padding: 36px;
 }
 
-.box-title{
+.card-title{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -223,18 +223,23 @@ header{
     gap: 26px;
 }
 
-.box p{
+.card p{
     margin-top: 26px;
 }
 
-.box h3{
+.card h3{
     color: #000;
     font-size: 20px;
     font-weight: 600;
 }
 
-.box ol{
+.card ol{
     margin: 10px 0 0 20px;
+}
+
+.carousel.dragging .card{
+    cursor: grab;
+    user-select: none;
 }
 
 /************************* Skills *****************************/
