@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css">
     <title>Dom Lucaz</title>
     <link rel="icon" type="image/x-icon" href="/assets/img/avatar2.png">
+    <script src="script/script.js" defer></script>
 </head>
 
 <body>
@@ -63,21 +64,21 @@
     <div class="layout-about">
         <section class="about" id="about">
             <div class="about-me">
-                <h2>
-                    Apaixonado por tecnologia, comunicação e artes. Busco sempre me manter atualizado sobre o que
-                    acontece
-                    no
-                    cenário de inovações tecnológicas mundial; tenho o objetivo em me tornar sênior e compartilhar meus
-                    conhecimentos com a comunidade em especial o público LGBT+
-                </h2>
+                <h3>
+                    Apaixonado por tecnologia, comunicação e artes. Busco sempre me atualizar sobre o mundo das
+                    inovações tecnológicas; tenho como objetivo aprender cada vez mais e compartilhar minhas
+                    experiências com a comunidade, em especial o público LGBTQIAP+.🌈
+                </h3>
             </div>
-            <h2>Meu Inter esses</h2>
+            <h2>Meu Interesses</h2>
             <div class="content-about">
 
-                <div class="layout-box">
+                <div class="carousel" id="carousel dragging">
                     <div class="box">
-                        <img src="assets/img/music.svg" alt="music" width="60px" height="60px">
-                        <h3>Musicas</h3>
+                        <div class="box-title">
+                            <img src="assets/img/music.svg" alt="music" width="60px" height="60px">
+                            <h3>Musicas</h3>
+                        </div>
                         <p>Lana Del Rey, a artista que me faz companhia em todos os momentos da minha vida, sejam
                             alegres ou
                             tristes. Estive em sua perfomace no Lollapalooza em 2018 e neste dia soube que a vida valia
@@ -94,8 +95,10 @@
                     </div>
 
                     <div class="box">
-                        <img src="assets/img/livros.svg" alt="livros" width="60px" height="60px">
-                        <h3>Livros</h3>
+                        <div class="box-title">
+                            <img src="assets/img/livros.svg" alt="livros" width="60px" height="60px">
+                            <h3>Livros</h3>
+                        </div>
                         <p>Livros me emocionam, me levam a lugares que nunca estive e aprimoram meu pensamento critico.
                             Acredito
                             que
@@ -108,8 +111,10 @@
                     </div>
 
                     <div class="box">
-                        <img src="assets/img/cinema.svg" alt="cinema" width="60px" height="60px">
-                        <h3>Cinema</h3>
+                        <div class="box-title">
+                            <img src="assets/img/cinema.svg" alt="cinema" width="60px" height="60px">
+                            <h3>Cinema</h3>
+                        </div>
                         <p>Dramas, Ficção e Sci-fi são os meus gêneros favoritos. Filme de super-heróis acho uma
                             chatice.
                             Esses
@@ -122,8 +127,10 @@
                     </div>
 
                     <div class="box">
-                        <img src="assets/img/tv.svg" alt="tv" width="60px" height="60px">
-                        <h3>Séries</h3>
+                        <div class="box-title">
+                            <img src="assets/img/tv.svg" alt="tv" width="60px" height="60px">
+                            <h3>Séries</h3>
+                        </div>
                         <p>Há dias que quero apenas sentar no sofá, comer bobagens e desconectar totalmente das
                             responsabilidades do dia a dia. Série britânicas são as minhas favoritas para momentos como
                             esse:
@@ -136,12 +143,16 @@
                     </div>
 
                     <div class="box">
-                        <img src="assets/img/riot.svg" alt="riot" width="60px" height="60px">
-                        <h3>League of Legends</h3>
-                        <p>Joguei LOL desde 2012, suporte é a minha melhor lane e a que mais me divirto. Diamante II foi
+                        <div class="box-title">
+                            <img src="assets/img/riot.svg" alt="riot" width="60px" height="60px">
+                            <h3>League of Legends</h3>
+                        </div>
+                        <p>Joguei LOL desde 2012, suporte é a minha melhor lane e a que mais me divirto. Diamante II
+                            foi
                             o
                             elo
-                            mais alto que alcancei. Acredito que somam mais de 3000 horas jogadas. Os meus personagens
+                            mais alto que alcancei. Acredito que somam mais de 3000 horas jogadas. Os meus
+                            personagens
                             favoritos:</p>
                         <ol>
                             <li>Diana</li>
@@ -151,11 +162,15 @@
                     </div>
 
                     <div class="box">
-                        <img src="assets/img/games.svg" alt="games" width="60px" height="60px">
-                        <h3>Games</h3>
-                        <p>Existem experiências na vida que são tão incríveis que às vezes desejaria esquecer todas as
+                        <div class="box-title">
+                            <img src="assets/img/games.svg" alt="games" width="60px" height="60px">
+                            <h3>Games</h3>
+                        </div>
+                        <p>Existem experiências na vida que são tão incríveis que às vezes desejaria esquecer todas
+                            as
                             emoções
-                            nela envolvidas para poder vivê-las novamente. Estes são os jogos que despertam esse desejo:
+                            nela envolvidas para poder vivê-las novamente. Estes são os jogos que despertam esse
+                            desejo:
                         </p>
                         <ol>
                             <li>BloodBorne</li>
@@ -165,8 +180,10 @@
                     </div>
 
                     <div class="box">
-                        <img src="assets/img/sport.svg" alt="sport" width="60px" height="60px">
-                        <h3>Esportes</h3>
+                        <div class="box-title">
+                            <img src="assets/img/sport.svg" alt="sport" width="60px" height="60px">
+                            <h3>Esportes</h3>
+                        </div>
                         <p>Minha paixão por esporte iniciou durante a adolescência com o Karate, onde trabalhei
                             constantemente
                             as virtudes de disciplina, autocontrole e respeito. Hoje em dia pratico para aliviar
@@ -277,7 +294,7 @@
                 </div>
             </div>
             <form>
-                <label for="nome">Nome</label><br>
+                <label for="nome">Nome</label>
                 <input type="text" id="name">
                 <label for="email">Email</label>
                 <input type="email" id="email">
