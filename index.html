@@ -41,7 +41,7 @@
 
                 <div class="texto-intro">
                     <picture>
-                        <img src="assets/img/lana.jpg" alt="Lucas Figueiredo">
+                        <img src="assets/img/lana.jpg" alt="Lucas Figueiredo" draggable="false">
                     </picture>
                     <h1>
                         <b>Lucas Figueiredo</b>
@@ -280,34 +280,44 @@
 
     <div class="layout-contact">
         <section class="contact" id="contact">
-            <div>
+            <div class="contact-details">
                 <h2>Vamos conversar!</h2>
-                <p>Procura por soluções digitais que impulsionem o seu negócio ou deseja desenvolver projetos inovadores
+                <h3>Procura por soluções digitais que impulsionem o seu negócio ou deseja desenvolver projetos
+                    inovadores
                     e
                     criativos? Não perca tempo, entre em contato comigo!
                     Estou aqui para ouvir a sua história e oferecer todo o suporte tecnológico nessa nova jornada.
                     Juntos
-                    tornaremos ideias em realidade</p>
-                <div>
+                    tornaremos ideias em realidade</h3>
+                <div class="social-media">
                     <p>Follow me</p>
-                    <img src="assets/img/github.svg" alt="React">
-                    <img src="assets/img/linkedin.svg" alt="React">
+                    <figure>
+                        <a href="https://github.com/DomLucaz" target="_blank">
+                            <img src="assets/img/github.svg" alt="React">
+                        </a>
+                        <a href="https://www.linkedin.com/in/domlucaz/" target="_blank">
+                            <img src="assets/img/linkedin.svg" alt="React">
+                        </a>
+                    </figure>
                 </div>
             </div>
-            <form>
+            <form class="form">
                 <label for="nome">Nome</label>
                 <input type="text" id="name">
                 <label for="email">Email</label>
                 <input type="email" id="email">
                 <label for="service">Qual serviço está interessado?</label>
-                <input type="text" id="service">
+                <select name="serviço" id="service">
+                    <option>Desenvolvimento Web</option>
+                    <option>Desenvolvimento Mobile</option>
+                    <option>UI Design</option>
+                </select>
                 <label for="Mensagem">Mensagem</label>
-                <input type="text" id="message">
+                <input type="text" id="message" rows="4" cols="50">
                 <button>
                     <p>Enviar Mensagem</p>
                 </button>
             </form>
-
 
         </section>
     </div>
