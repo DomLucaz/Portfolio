@@ -14,31 +14,27 @@
 <body>
 
     <!-- Inicio navbar -->
-    <div class="layout-nav">
-        <div class="navbar">
-            <header>
-                <img src="assets/img/DOML.svg" alt="LogoDOML">
-            </header>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </div>
+    <nav class="navbar" id="navbar">
+        <header>
+            <img src="assets/img/DOML.svg" alt="LogoDOML">
+        </header>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
     <!-- fim nav bar -->
 
     <!-- Inicio Home -->
-    <div class="layout-home">
-        <section class="home" id="home">
-
+    <section class="home" id="home">
+        <div class="container">
             <picture class="layout-union">
                 <img src="assets/img/Union.png">
             </picture>
             <div class="intro">
-
                 <div class="texto-intro">
                     <picture>
                         <img src="assets/img/lana.jpg" alt="Lucas Figueiredo" draggable="false">
@@ -48,23 +44,23 @@
                         <p>Software Developer Full Stack</p>
                     </h1>
                 </div>
-                <div class="button-talk">
-                    <button>
+                <span class="button-talk">
+                    <button class="btn" id="btn-talk">
                         <p>Let's talk</p>
                     </button>
-                </div>
+                </span>
             </div>
 
             <picture class="layout-union2">
                 <img src="assets/img/Union.png">
             </picture>
-        </section>
-    </div>
+        </div>
+    </section>
     <!-- Fim Home -->
 
     <!-- Inicio about -->
-    <div class="layout-about">
-        <section class="about" id="about">
+    <section class="about" id="about">
+        <div class="container">
             <div class="about-me">
                 <h3>
                     Apaixonado por tecnologia, comunicação e artes. Busco sempre me atualizar sobre o mundo das
@@ -200,11 +196,11 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <div class="layout-skills">
-        <section class="skills" id="skills">
+    <section class="skills" id="skills">
+        <div class="container">
             <h2>O que eu faço?</h2>
             <div class="skill-details">
                 <div class="skill-card">
@@ -268,25 +264,126 @@
                     <p>Figma</p>
                 </div>
             </div>
-
-        </section>
-    </div>
-
-    <div class="layout">
-        <section class="projects" id="projects">
-            <h1>aaaa</h1>
-        </section>
-    </div>
-
-    <div class="layout-contact">
-        <section class="contact" id="contact">
-            <div class="contact-details">
+        </div>
+    </section>
+    <!-- Project section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-heading" data-outline="Projects">Project</h2>
+            <div class="all-items">
+                <div class="item">
+                    <div class="left">
+                        <div class="imagem">
+                            <img src="assets/img/city.webp" alt="project">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2>
+                            Lorem ipsum dolor sit amet
+                        </h2>
+                        <h3>
+                            Lorem ipsum dolor sit amet
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.
+                        </p>
+                        <div class="buttons">
+                            <button href="#" class="project-btn">Saiba mais</button>
+                            <button href="#" class="project-btn-outline"><span>Preview</span><svg
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left">
+                        <div class="imagem">
+                            <img src="assets/img/steam36.webp">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="project-title">
+                            Lorem ipsum dolor sit amet
+                        </h2>
+                        <h3>
+                            Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class="project-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.
+                        </p>
+                        <div class="buttons">
+                            <a href="#" class="project-btn">Saiba mais</a>
+                            <a href="#" class="project-btn outline external-link"><span>Preview</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left">
+                        <div class="imagem">
+                            <img src="assets/img/quiz.webp">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h2 class="project-title">
+                            Lorem ipsum dolor sit amet
+                        </h2>
+                        <h3>
+                            Lorem ipsum dolor sit amet
+                        </h3>
+                        <p class=" project-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.
+                        </p>
+                        <div class="buttons">
+                            <button href="#" class="project-btn">Saiba mais</button>
+                            <button href="#" class="project-btn-outline"><span>Preview</span><svg
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="details">
                 <h2>Vamos</h2>
                 <h2>conversar!</h2>
-                <p>Em busca por soluções digitais que impulsionem os seus negócios ou deseja desenvolver projetos
+                <p>Em busca por soluções digitais que impulsionem os seus negócios ou deseja desenvolver
+                    projetos
                     inovadores e criativos? Não perca tempo, entre em contato comigo!</p>
                 <p>
-                    Estou aqui para ouvir a sua história e oferecer suporte sobre assuntos tecnológico nessa nova
+                    Estou aqui para ouvir a sua história e oferecer suporte sobre assuntos tecnológico nessa
+                    nova
                     jornada. Juntos tornaremos ideias em realidade
                 </p>
                 <div class="social-media">
@@ -315,13 +412,12 @@
                 </select>
                 <label for="Mensagem">Mensagem</label>
                 <input type="text" id="message" rows="4" cols="50">
-                <button>
+                <button class="btn-massage">
                     <p>Enviar Mensagem</p>
                 </button>
             </form>
-
-        </section>
-    </div>
+        </div>
+    </section>
     <footer>
         <p>© 2023 - Desenvolvido por Lucas Figueiredo. Todos os direitos reservados.</p>
     </footer>

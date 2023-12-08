@@ -1,21 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 html{
-    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
     scroll-behavior: smooth;
-    scroll-padding: 10rem;
-}
-
-body{
-    
-    display: flex; 
-    flex-direction: column;
-    background-image: url(assets/img/stripes-backgroundsvg.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    scroll-padding: var(--scroll-padding, 5rem)
 }
 
 footer{
@@ -25,68 +15,62 @@ footer{
 
 /************************* Navbar *****************************/
 
-.layout-nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* border: 1px solid rgb(0, 4, 255);     */
-}
-
-.navbar{
+#navbar{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 20px 80px;
-    position: absolute;
-    /* border: 1px solid red; */
+    position: fixed;
     max-width: 1400px;
     width: 100%;
+    transition: 0.5s;
 }
 
-nav{
+#navbar ul{
     display: flex;
     gap: 42px;
 }
 
-nav a{
+#navbar ul li a{
     text-decoration: none; 
 }
 
-nav a:link{
+#navbar ul li a:link{
     color: black;
 }
 
-nav a:visited{
+#navbar ul li a:visited{
     color: rgb(97, 97, 97);
 }
 
-nav a:hover{
+#navbar ul li a:hover{
     color: rgba(163, 163, 163, 0.486);
     transition: 0.4s;
 }
 
-header{
+#navbar header{
     width: 2.6556rem;
     height: 16.581px;
 }
 
 /************************* Home *****************************/
 
-.layout-home{
+#home{
+    display: flex;
+    height: 100dvh;
+    padding: 10rem;
+    background-image: url(assets/img/stripes-backgroundsvg.svg);
+}
+
+#home .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    height: 100dvh;
+    max-width: 1400px;
 }
 
-.home{
-    display: flex;
-    flex-direction: column;
-    max-width: 1400px;
-    width: 100%;
-    order: 1px solid red;
-}
-.intro{
+#home .intro{
     display: flex;
     flex-direction: column;
     width: 52.875rem;
@@ -123,15 +107,26 @@ header{
     letter-spacing: 0.48px;
 }
 
-.intro button{
+.btn{
     padding: 14px 41px;
     border: none;
     border-radius: 3px;
     background: #000;
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
 }
 
-.intro button p{
+.btn:hover, .btn:focus, .btn:active{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.btn{
     color:  #F4F1E7;
     font-size: 14px;
     font-style: normal;
@@ -164,23 +159,23 @@ header{
 
 /************************* About *****************************/
 
-.layout-about{
+
+#about{
+    display: flex;
+    height: 100dvh;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+#about .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100dvh;
-    /* border: 1px solid red; */
-    background-color: white;
+    border: 1px solid red;
+    padding-top: 4rem;
 }
 
-.about{
-    display: flex;
-    flex-direction: column;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.about-me{
+#about .about-me{
     border-radius: 7px;
     border: 1px solid #000;
     background: #FFF;
@@ -190,10 +185,9 @@ header{
     padding: 73px 123px 72px 123px;
     justify-content: center;
     margin: 0 auto;
-    /* position:fixed ; */
 }
 
-.about h2{
+#about h2{
     margin: 130px 0 30px 0;
     color: #000;
     font-size: 32px;
@@ -228,6 +222,7 @@ header{
     justify-content: center;
     padding: 36px;
     text-align: start;
+    scroll-snap-align: start;
 }
 
 .card-title{
@@ -254,14 +249,14 @@ header{
 
 
 /************************* Skills *****************************/
-.layout-skills{
+#skills{
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100dvh;
     background-color: white;
 }
-.skills{
+#skills .container{
     display: flex;
     flex-direction: column;
     max-width: 1400px;
@@ -313,38 +308,119 @@ header{
     margin-left: 28px;
 }
 /************************* Projects *****************************/
-.projects{
-    height: 100%;
-    height: 100dvh;
-    height: 100vh;
+#projects{
     display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1400px;
+    border: 1px solid red;
 }
+
+#projects .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 15rem;
+}
+
+#projects .section-heading{
+    color: #000;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#projects .item:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+#projects .item .left{
+    flex: 1;
+}
+#projects .item .right{
+    flex: 1;
+    margin-left: -150px;
+    background-color:white;
+    padding: 5rem 2rem; 
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00000028;
+    z-index: 2;
+}
+
+#projects .item:nth-child(even) .right{
+    margin-left: 0;
+}
+
+#projects .item:nth-child(even) .left{
+    margin-left: -150px;
+}
+
+#projects .item .left .imagem{
+    height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(43, 39, 39, 0.2);
+}
+
+#projects .item .left .imagem img {
+    object-fit: cover;
+    transition: 0.3s ease transform;
+    height: 100%;
+}
+#projects .item:hover .left .imagem img {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+#projects .item .right h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#projects .item .right h3{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+#projects .item .right p{
+    margin-bottom: 3rem;
+}
+
+#projects .item .right .buttons .external-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    padding: calc(0.6em -4px) calc(0.6em -4px);
+}
+
+#projects .item .right .buttons .external-link svg{
+    width: 25px;
+}
+
 /************************* Contact *****************************/
 
-.layout-contact{
+#contact{
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100dvh;
-    /* border: 1px solid red; */
-    background-color: white;
 }
 
-.contact{
+#contact .container{
     display: flex;
     flex-direction: row;
     /* width: max-content; */
     max-width: 1400px;
     margin: 0 auto;
-    /* border: 1px solid red; */
 }
 
-.contact-details{
+#contact .details{
     display: flex;
     flex-grow: 0;
     flex-direction: column;
     width: 100%;
-    /* border: 1px solid red; */
 }
 
 .social-media{
@@ -365,13 +441,13 @@ header{
     gap: 20px;
 }
 
-.contact-details h2{
-    font-size: 64px;
+#contact .details h2{
+    font-size: 4rem;
     font-weight: 700;
     display: inline;
 }
 
-.contact-details p {
+#contact .details p {
     font-size: 20px;
     font-weight: 400;
     margin-top: 20px;
@@ -382,7 +458,7 @@ header{
     font-weight: 700;
 }
 
-.contact form {
+#contact .form {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -394,29 +470,27 @@ header{
     font-weight: 400;
     line-height: normal;
 }
-.form label {
+#contact .form label {
     margin: 26px 0;
 }
-.form input{
+#contact .form input{
     border: #f7f7f7;
     background-color: #F7F7F7;
     padding: 12px 16px;
     border-radius: 0%;
 }
 
-.form button{
-    /* display: inline-flex; */
+.btn-massage{
     padding: 14px 41px;
-    /* align-items: flex-start; */
-    /* gap: 8px; */
     margin-top: 26px;
     border: none;
     border-radius: 3px;
     background: #000;
-    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 0px  rgba(0, 0, 0, 0.719);
+    cursor: pointer;
 }
 
-.form button p{
+.btn-massage p{
     color:  #F4F1E7;
     font-size: 14px;
     font-style: normal;
@@ -424,8 +498,17 @@ header{
     line-height: normal;
     letter-spacing: 0.32px;
 }
+.btn-massage:hover{
+    transition: 0.2s;
+    background-color: #000000e3;
+}
 
-.form select{
+.btn-massage:active{
+    box-shadow: none;
+    transform: translateY(5px);     
+}
+
+#contact .form select{
     color:  #B2B2B2;
     padding: 12px 16px;
     border-radius: 0%;

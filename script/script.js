@@ -26,3 +26,27 @@ carousels.forEach(carousel => {
     carousel.addEventListener("mousemove", dragging);
     carousel.addEventListener("mouseup", dragStop);
 });
+
+// Button talk 
+
+document.getElementById("btn-talk").addEventListener("click", function() {
+    window.location.href = "index.html#contact";
+});
+
+// Hide Header on Scroll Down Show on Scroll Up
+
+let lastScroll = 0;
+const navbar = document.getElementById("navbar");
+window.addEventListener("scroll", function (){
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScroll){
+        navbar.style.opacity = "0";
+    } else {
+        navbar.style.opacity = "1";
+    }
+    lastScroll = scrollTop;
+});
+
+
+
