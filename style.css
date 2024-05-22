@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+    --letter-color:
+}
+
+
+/********************* Global Styles *************************/
+
 html{
     margin: 0;
     padding: 0;
@@ -171,7 +180,6 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid red;
     padding-top: 4rem;
 }
 
@@ -254,7 +262,6 @@ footer{
     flex-direction: column;
     justify-content: center;
     height: 100dvh;
-    background-color: white;
 }
 #skills .container{
     display: flex;
@@ -313,7 +320,6 @@ footer{
     flex-direction: column;
     margin: 0 auto;
     max-width: 1400px;
-    border: 1px solid red;
 }
 
 #projects .item{
@@ -373,30 +379,81 @@ footer{
     z-index: 1;
 }
 
-#projects .item .right h2{
+#projects .item .right .project-title{
     font-size: 2.5rem;
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-#projects .item .right h3{
-    font-size: 1.6rem;
-    font-weight: 700;
+#projects .item .right .project-sub-title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
 }
 
-#projects .item .right p{
+#projects .item .right .project-desc{
     margin-bottom: 3rem;
 }
 
-#projects .item .right .buttons .external-link {
+#projects .item .right .buttons {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+#projects .item .right .buttons .primary-btn{
+    display: inline-block;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    box-shadow: 0px 5px 0px  rgba(0, 0, 0, 0.719);
+    cursor: pointer;
+    color: white;
+}
+
+#projects .item .right .buttons .secondary-btn{
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid black;
+    padding: 14px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: none;
+    background-color: var(--secondary-color);
+    color: black;
     gap:1rem;
     padding: calc(0.6em -4px) calc(0.6em -4px);
+    z-index: 1;
 }
 
-#projects .item .right .buttons .external-link svg{
-    width: 25px;
+
+#projects .item .right .buttons .primary-btn:hover{
+    transition: 0.2s;
+    background-color: #000000e3;
+}
+#projects .item .right .buttons .primary-btn:active{
+    box-shadow: none;
+    transform: translateY(5px);     
+}
+
+#projects .item .right .buttons .secondary-btn::before{
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-color: red;
+}
+
+
+
+#projects .item .right .buttons .secondary-btn svg{
+    width: 16px;
 }
 
 /************************* Contact *****************************/
@@ -432,7 +489,9 @@ footer{
     gap: 20px;
 }
 
-.social-media p{
+#contact .details .social-media p{
+    font-weight: 700;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
