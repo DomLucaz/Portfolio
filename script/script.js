@@ -1,4 +1,5 @@
-const carousels = document.querySelectorAll(".carousel");
+import { carousels } from "./smooth.js";
+import { smooth } from "./smooth.js"
 
 let isDragging = false, startX, startScrollLeft;
 
@@ -47,6 +48,4 @@ window.addEventListener("scroll", function (){
     }
     lastScroll = scrollTop;
 });
-
-
 
