@@ -12,18 +12,34 @@
 
 <body>
     <!-- Inicio navbar -->
-    <nav class="navbar" id="navbar">
-        <header>
-            <img src="assets/img/DOML.svg" alt="LogoDOML">
-        </header>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="header">
+        <nav class="navbar" id="navbar">
+            <div class="logo">
+                <img src="assets/img/DOML.svg" alt="LogoDOML">
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Botão do menu mobile -->
+            <button class="btn-toggle" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" style="width: 24px; height: 24px;" class="btn-burger">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    style="width: 24px; height: 24px;" class="btn-close">
+                    <path fill-rule="evenodd"
+                        d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+        </nav>
+    </header>
     <!-- fim nav bar -->
 
     <!-- Inicio Home -->
@@ -73,8 +89,7 @@
                 <div class="carousel" id="about-carousel">
                     <div class="card">
                         <div class="card-title">
-                            <img src="assets/img/music.svg" alt="music" width="3.75rem" height="3.75rem"
-                                draggable="false">
+                            <img src="assets/img/music.svg" alt="music" class="img-scale" draggable="false">
                             <h3>Musicas</h3>
                         </div>
                         <p>Lana Del Rey, a artista que me faz companhia em todos os momentos da minha vida, sejam
@@ -94,8 +109,7 @@
 
                     <div class="card">
                         <div class="card-title">
-                            <img src="assets/img/livros.svg" alt="livros" width="3.75rem" height="3.75rem"
-                                draggable="false">
+                            <img src="assets/img/livros.svg" alt="livros" class="img-scale" draggable="false">
                             <h3>Livros</h3>
                         </div>
                         <p>Livros me emocionam, me levam a lugares que nunca estive e aprimoram meu pensamento critico.
@@ -111,8 +125,7 @@
 
                     <div class="card">
                         <div class="card-title">
-                            <img src="assets/img/cinema.svg" alt="cinema" width="3.75rem" height="3.75rem"
-                                draggable="false">
+                            <img src="assets/img/cinema.svg" alt="cinema" class="img-scale" draggable="false">
                             <h3>Cinema</h3>
                         </div>
                         <p>Dramas, Ficção e Sci-fi são os meus gêneros favoritos. Filme de super-heróis acho uma
@@ -128,7 +141,7 @@
 
                     <div class="card">
                         <div class="card-title">
-                            <img src="assets/img/tv.svg" alt="tv" width="3.75rem" height="3.75rem" draggable="false">
+                            <img src="assets/img/tv.svg" alt="tv" class="img-scale" draggable="false">
                             <h3>Séries</h3>
                         </div>
                         <p>Há dias que quero apenas sentar no sofá, comer bobagens e desconectar totalmente das
@@ -137,35 +150,14 @@
                         </p>
                         <ol>
                             <li>The Crown</li>
-                            <li>Fleabag</li>
+                            <li>Severance</li>
                             <li>Black Mirror</li>
                         </ol>
                     </div>
 
                     <div class="card">
                         <div class="card-title">
-                            <img src="assets/img/riot.svg" alt="riot" width="3.75rem" height="3.75rem"
-                                draggable="false">
-                            <h3>League of Legends</h3>
-                        </div>
-                        <p>Joguei LOL desde 2012, suporte é a minha melhor lane e a que mais me divirto. Diamante II
-                            foi
-                            o
-                            elo
-                            mais alto que alcancei. Acredito que somam mais de 3000 horas jogadas. Os meus
-                            personagens
-                            favoritos:</p>
-                        <ol>
-                            <li>Diana</li>
-                            <li>Nidalee</li>
-                            <li>Nami</li>
-                        </ol>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-title">
-                            <img src="assets/img/games.svg" alt="games" width="3.75rem" height="3.75rem"
-                                draggable="false">
+                            <img src="assets/img/games.svg" alt="games" class="img-scale" draggable="false">
                             <h3>Games</h3>
                         </div>
                         <p>Existem experiências na vida que são tão incríveis que às vezes desejaria esquecer todas
@@ -183,8 +175,7 @@
 
                     <div class="card">
                         <div class="card-title">
-                            <img src="assets/img/sport.svg" alt="sport" width="3.75rem" height="3.75rem"
-                                draggable="false">
+                            <img src="assets/img/sport.svg" alt="sport" class="img-scale" draggable="false">
                             <h3>Esportes</h3>
                         </div>
                         <p>Minha paixão por esporte iniciou durante a adolescência com o Karate, onde trabalhei
@@ -211,7 +202,7 @@
             <h2>O que eu faço?</h2>
             <div class="skill-details">
                 <div class="skill-card">
-                    <img src="assets/img/ui-design.svg" alt="ui-design" width="6.25rem">
+                    <img src="assets/img/ui-design.svg" alt="ui-design" class="skill-scale">
                     <h3>UI Design</h3>
                     <p>Focado em criar soluções visuais criativas e singulares em Design UI. Estou sempre em busca de
                         novas
@@ -219,14 +210,14 @@
                         de meajustar a diferentes estilos e necessidades de projeto.</p>
                 </div>
                 <div class="skill-card">
-                    <img src="assets/img/web.svg" alt="React" width="6.25rem">
+                    <img src="assets/img/web.svg" alt="React" class="skill-scale">
                     <h3>Web Application</h3>
                     <p>Dedicado em transformar ideias em experiências interativas e inovadoras para o mundo digital. Com
                         foco especial em JavaScript, estou constantemente explorando novas possibilidades e soluções
                         criativas para desenvolvimento Web.</p>
                 </div>
                 <div class="skill-card">
-                    <img src="assets/img/mobile.svg" alt="React" width="6.25rem">
+                    <img src="assets/img/mobile.svg" alt="React" class="skill-scale">
                     <h3>Mobile Application</h3>
                     <p>Com conhecimento especializado em React Native, estou sempre explorando novas possibilidades e
                         soluções criativas para projetos mobile. Meu objetivo é oferecer soluções de alta qualidade e
@@ -237,35 +228,35 @@
             <h2>Tecnologias</h2>
             <div class="carousel" id="tech-carousel">
                 <div class="tech-card">
-                    <img src="assets/img/react.svg" alt="React" draggable="false">
+                    <img src="assets/img/react.svg" alt="React" class="tech-scale" draggable="false">
                     <p>React</p>
                 </div>
                 <div class="tech-card">
-                    <img src="assets/img/typescript.svg" alt="TypeScript" draggable="false">
+                    <img src="assets/img/typescript.svg" alt="TypeScript" class="tech-scale" draggable="false">
                     <p>TypeScript</p>
                 </div>
                 <div class="tech-card">
-                    <img src="assets/img/JS.svg" alt="JavaScript" draggable="false">
+                    <img src="assets/img/JS.svg" alt="JavaScript" class="tech-scale" draggable="false">
                     <p>JavaScript</p>
                 </div>
                 <div class="tech-card">
-                    <img src="assets/img/mysql.svg" alt="MySQL" draggable="false">
+                    <img src="assets/img/mysql.svg" alt="MySQL" class="tech-scale" draggable="false">
                     <p>MySQL</p>
                 </div>
                 <div class="tech-card">
-                    <img src="assets/img/bootstrap.svg" alt="Bootstrap" draggable="false">
+                    <img src="assets/img/bootstrap.svg" alt="Bootstrap" class="tech-scale" draggable="false">
                     <p>Bootstrap</p>
                 </div>
                 <div class="tech-card">
-                    <img src="assets/img/css.svg" alt="CSS3" width="6.25rem" draggable="false">
+                    <img src="assets/img/css.svg" alt="CSS3" class="tech-scale" draggable="false">
                     <p>CSS3</p>
                 </div>
                 <div class="tech-card">
-                    <img src="assets/img/html.svg" alt="HTML5" width="6.25rem" draggable="false">
+                    <img src="assets/img/html.svg" alt="HTML5" class="tech-scale" draggable="false">
                     <p>HTML5</p>
                 </div>
                 <div class="tech-card">
-                    <img src="assets/img/figma.svg" alt="Figma" width="6.25rem" draggable="false">
+                    <img src="assets/img/figma.svg" alt="Figma" class="tech-scale" draggable="false">
                     <p>Figma</p>
                 </div>
             </div>
@@ -337,10 +328,10 @@
                             compras e método de pagamento.
                         </p>
                         <div class="buttons">
-                            <a href="https://github.com/DomLucaz/Projeto_Steam36" target="_blank"><button
-                                    class="primary-btn">Saiba mais</button>
-                                <a href=" " target="_blank"><button class="secondary-btn">Preview
-
+                            <a href="https://github.com/DomLucaz/Projeto_Steam36" target="_blank">
+                                <button class="primary-btn">Saiba mais</button>
+                                <a href=" " target="_blank">
+                                    <button class="secondary-btn">Preview
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="2" stroke="currentColor" class="w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round"
