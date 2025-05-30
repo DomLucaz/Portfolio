@@ -1,5 +1,4 @@
-import { carousels } from "./smooth.js";
-import { smooth } from "./smooth.js"
+const carousels = document.querySelectorAll(".carousel");
 
 let isDragging = false, startX, startScrollLeft;
 

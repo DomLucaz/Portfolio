@@ -16,6 +16,7 @@ html{
     scroll-behavior: smooth;
     scroll-padding-top: var(--scroll-padding);
     scroll-snap-type: y mandatory;
+    
 }
 
 footer{
@@ -34,6 +35,7 @@ footer{
     max-width: 1400px;
     width: 100%;
     transition: 0.5s;
+
 }
 
 #navbar ul{
@@ -58,12 +60,21 @@ footer{
     transition: 0.4s;
 }
 
-#navbar header{
+#navbar .logo{
     width: 2.6556rem;
     height: 16.581px;
 }
 
-/************************* Home *****s************************/
+#navbar .btn-toggle{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+/************************* Home *****************************/
 
 #home{
     display: flex;
@@ -243,6 +254,10 @@ footer{
     margin: 0 auto;
     gap: 26px;
 }
+.card .img-scale{
+    width: 3.75rem; 
+    height: 3.75rem; 
+}
 
 .card p{
     margin-top: 26px;
@@ -293,7 +308,9 @@ footer{
     font-size: 20px;
     font-weight: 600;
 }
-
+.skill-card .skill-scale{
+    width: 6.25rem;
+}
 #tech-carousel{
     display: grid;
     grid-auto-flow: column;
@@ -318,6 +335,10 @@ footer{
     font-weight: 500;
     margin-left: 28px;
 }
+
+.tech-card .tech-scale{
+    width: 6.25rem;
+}
 /************************* Projects *****************************/
 #projects{
     display: flex;
@@ -328,7 +349,6 @@ footer{
 }
 
 #projects .all-items{
-    border: 1px solid red;
     scroll-snap-align: start;
 }
 
@@ -336,7 +356,6 @@ footer{
     color: #000;
     font-size: 32px;
     font-weight: 700;
-    border: 1px solid red;
     margin-bottom: 70px;
 }
 
@@ -611,5 +630,30 @@ footer{
     background-color: #F7F7F7;
     border: #f7f7f7;
 }
+
+@media screen and (min-width: 1201px) {
+    
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    #navbar{
+        margin: 20px 40px;
+    }
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024spx) {
+  
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    
+}
+
+/** Mobile **/
+
+
 
 
