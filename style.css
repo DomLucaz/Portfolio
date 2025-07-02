@@ -43,7 +43,6 @@ footer{
     justify-content: center;
     align-items: center;
     transition: 0.5s;
-    border: 1px solid red;
     margin: 0 auto; 
 }
 #navbar .container{
@@ -53,7 +52,6 @@ footer{
     max-width: 1400px;
     margin: 0 auto; 
     padding: 10px 0 ;
-    border: 1px solid blue;
     width: 80%;
 }
 
