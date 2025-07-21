@@ -9,6 +9,10 @@
     --z-fixed: 100;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body{
     background-color: var(--secondary-color);
 }
@@ -22,6 +26,7 @@ html{
     scroll-behavior: smooth;
     scroll-padding-top: var(--scroll-padding);
     scroll-snap-type: y mandatory;
+    box-sizing: border-box;
     
 }
 
@@ -94,15 +99,18 @@ footer{
 
 /************************* Home *****************************/
 
-#home {
+#home{
     display: flex;
+    justify-content: center;
     height: 100dvh;
-    padding: 10rem;
     background-image: url(assets/img/stripes-backgroundsvg.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     scroll-snap-align: start;
+    border: 1px solid black;
+    position: relative;
+    z-index: 0;
 }
 
 #home .container{
@@ -110,15 +118,17 @@ footer{
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1200px;
-    /* border: 1px solid red; */
+    max-width: 1400px;
+    width: 100%;
 }
 
-#home .intro{
+.intro{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
-    width: 52.875rem;
+    margin: 0 auto;
+    max-width: 52.875rem;
     border-radius: 7px;
     border: 1px solid #000;
     background: #FFF;
@@ -185,39 +195,46 @@ footer{
     margin: 32px 28px;
 }
 
-.intro img{
+.img-intro{
     border-radius: 100%;
     width: 10.375rem;
     margin: 32px auto;
 }
 
+.layout-union, .layout-union2{
+    position: absolute;
+    z-index: -1;
+}
+
 .layout-union{
-    margin: -50px;
+    top: -30px;
+    left: -40px;
 }
 
 .layout-union2{
-    display: flex;
-    justify-content: end;
-    margin: -50px;
+    bottom: -30px;
+    right: -40px;
 }
-
 
 /************************* About *****************************/
 
 
 #about{
     display: flex;
+    justify-content: center;
     height: 100dvh;
-    margin: 0 auto;
-    max-width: 1400px;
     scroll-snap-align: start;
 }
 
 #about .container{
+    max-width: 1400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-top: 4rem;
+    border: 1px solid red;
+    margin: 0 auto;
+    width: 100%;
 }
 
 #about .about-me{
@@ -227,9 +244,11 @@ footer{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
     width: 60%;
-    padding: 73px 123px 72px 123px;
+    padding: 72px clamp(1rem, 5vw, 122px);
     justify-content: center;
     margin: 0 auto;
+    box-sizing: border-box;
+    min-width: 320px;
 }
 
 #about h2{
@@ -255,7 +274,6 @@ footer{
 
 .content-about{
     display: flex;
-    /* border: 1px solid red; */
 }
 
 .card{
@@ -268,6 +286,10 @@ footer{
     padding: 36px;
     text-align: start;
     scroll-snap-align: start;
+    box-sizing: border-box;
+    object-fit: cover;
+    min-width: 320px;
+   
 }
 
 .card-title{
@@ -276,6 +298,7 @@ footer{
     align-items: center;
     margin: 0 auto;
     gap: 26px;
+    border: 1px solid red;
 }
 .card .img-scale{
     width: 3.75rem; 
@@ -298,7 +321,7 @@ footer{
 
 
 /************************* Skills *****************************/
-#skills{
+.skills{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -363,7 +386,7 @@ footer{
     width: 6.25rem;
 }
 /************************* Projects *****************************/
-#projects{
+.projects{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -536,7 +559,7 @@ footer{
 
 /************************* Contact *****************************/
 
-#contact{
+.contact{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -656,6 +679,14 @@ footer{
 
 /* Tablet and Desktop */
 
+@media (max-width: 980px) {
+    .intro {
+    max-width: 80%;
+    }
+
+
+}
+
 @media screen and (min-width: 768px) {
 
     #navbar ul{
@@ -685,6 +716,9 @@ footer{
 /************ Mobile ******************/
 
 @media screen and (max-width: 767px) {
+
+/************************* Navbar *****************************/
+
         .nav__menu{
         position: fixed;
         bottom: 0;
@@ -760,10 +794,23 @@ footer{
 
     .nav__data{
         flex-direction: row-reverse;
-        padding-inline: 2rem;
+        padding-inline: 1rem;
+    }
+
+
+    /************************* Home *****************************/
+
+    .intro {
+        max-width: 80%;
+    }
+
+    .button-talk{
+        justify-content: center;
     }
 
 }
+
+
 
 @media screen and (min-width: 768px) {
 
@@ -772,12 +819,120 @@ footer{
     }
 }
 
-@media (max-width: 375px) {
-    .home {
-    background-image: none;
-    background-color: white; /* Ou outra cor suave */
+@media (max-width: 560px) {
+    
+    .intro{
+        max-width: 76%;
+    }
+    
+    .texto-intro p {
+        font-size: 20px;
+    }
+
+    .texto-intro h1 {
+        font-size: 20px;
+    }
+
+    .texto-intro b {
+        font-size: 20px;
+
+    }
+
+    .btn {
+    padding: 14px 26px;
     }
 }
+
+@media screen and (max-width: 480px) {
+    .intro {
+        width: 100%;
+        min-width: 280px;
+        padding-top: 24px;  /* reduz o espaço superior */
+        padding-bottom: 24px; /* se quiser adicionar também */
+        height: auto; /* ou um height fixo, tipo: height: 300px; */
+    }
+
+    .layout-union, .layout-union2{
+        width: 60px;
+    }
+    
+    .layout-union{
+        top: -30px;
+        left: -20px;
+    }
+
+    .layout-union2{
+        bottom: -30px;
+        right: -20px;
+    }
+
+    .texto-intro{
+        padding: .8em;
+    }
+
+    .texto-intro p {
+        font-size: 18px;
+    }
+
+    .texto-intro h1 {
+        font-size: 18px;
+    }
+
+    .texto-intro b {
+        font-size: 18px;
+
+    }
+
+    
+}
+
+@media screen and (max-width: 405px)  {
+
+    .img-intro{
+        border-radius: 100%;
+        width: 144px;
+        margin: 32px auto;
+    }
+    
+    .texto-intro{
+        padding: .8em;
+    }
+
+    .texto-intro p {
+        font-size: 16px;
+    }
+
+    .texto-intro h1 {
+        font-size: 16px;
+    }
+
+    .texto-intro b {
+        font-size: 18px;
+
+    }
+
+    .btn{
+    color:  #F4F1E7;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    }
+
+    #about-carousel {
+    grid-auto-columns: calc((100% / 1) - 12px); /* 2 cards por vez */
+    }
+
+    
+}
+
+/* @media (max-width: 375px) {
+    .home {
+    background-image: none;
+    background-color: white;  Ou outra cor suave
+    }
+} */
 
 
 
