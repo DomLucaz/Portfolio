@@ -5,6 +5,12 @@
     --secondary-color: white;
     --header-height: 3.5rem;
 
+    --card-min-width: 320px; /* Largura mínima de cada cartão */
+    --gap: 60px; /* Espaçamento entre cartões */
+    --max-columns: 4; /* Máximo de colunas em telas grandes */
+
+
+
     /***************** z-index ****************/
     --z-fixed: 100;
 }
@@ -232,19 +238,17 @@ footer{
     flex-direction: column;
     justify-content: center;
     padding-top: 4rem;
-    border: 1px solid red;
     margin: 0 auto;
     width: 100%;
 }
 
-#about .about-me{
+.about-me{
     border-radius: 7px;
-    border: 1px solid #000;
     background: #FFF;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
     width: 60%;
-    padding: 72px clamp(1rem, 5vw, 122px);
+    padding: 30px clamp(1rem, 2vw, 100px);
     justify-content: center;
     margin: 0 auto;
     box-sizing: border-box;
@@ -261,9 +265,13 @@ footer{
 #about-carousel{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc((100% / 4) - 12px);
-    gap: 20px;
+    /* grid-auto-columns: calc((100% / 4) - 12px);
+    gap: 20px; */
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
+    gap: var(--gap);
     overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
     scroll-padding: 1rem;
 }
 
@@ -289,7 +297,6 @@ footer{
     box-sizing: border-box;
     object-fit: cover;
     min-width: 320px;
-   
 }
 
 .card-title{
@@ -298,11 +305,10 @@ footer{
     align-items: center;
     margin: 0 auto;
     gap: 26px;
-    border: 1px solid red;
 }
-.card .img-scale{
+.img-scale{
     width: 3.75rem; 
-    height: 3.75rem; 
+    /* height: 3.75rem;  */
 }
 
 .card p{
@@ -321,18 +327,22 @@ footer{
 
 
 /************************* Skills *****************************/
-.skills{
+
+#skills{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     height: 100dvh;
     scroll-snap-align: start;
+    /* border: 1px solid red; */
 }
 #skills .container{
+    max-width: 1400px;
     display: flex;
     flex-direction: column;
-    max-width: 1400px;
+    justify-content: center;
     margin: 0 auto;
+    width: 100%;
+    /* border: 1px solid red; */
 }
 
 .skills h2{
@@ -347,6 +357,7 @@ footer{
     gap: 52px;
     margin-bottom: 114px;
     text-align: left;
+    min-width: 320px;
 }
 
 .skill-card h3{
@@ -354,15 +365,16 @@ footer{
     font-size: 20px;
     font-weight: 600;
 }
-.skill-card .skill-scale{
+.skill-scale{
     width: 6.25rem;
 }
+
 #tech-carousel{
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: calc((100% / 6) - 12px);
+    grid-auto-flow: row;
+    grid-template-columns: repeat(8, minmax(250px, 1fr));
     gap: 20px;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #tech-carousel.dragging .tech-card{
@@ -382,9 +394,11 @@ footer{
     margin-left: 28px;
 }
 
-.tech-card .tech-scale{
+.tech-scale{
     width: 6.25rem;
 }
+
+
 /************************* Projects *****************************/
 .projects{
     display: flex;
@@ -412,6 +426,7 @@ footer{
     max-width: 800px;
     margin: 0 auto;
     margin-bottom: 15rem;
+    min-width: 320px;
 }
 
 #projects .item:nth-child(even){
@@ -570,9 +585,9 @@ footer{
 #contact .container{
     display: flex;
     flex-direction: row;
-    /* width: max-content; */
     max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
 }
 
 #contact .details{
@@ -580,6 +595,7 @@ footer{
     flex-grow: 0;
     flex-direction: column;
     width: 100%;
+    min-width: 320px;
 }
 
 .social-media{
@@ -630,6 +646,7 @@ footer{
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    min-width: 320px;
 }
 #contact .form label {
     margin: 26px 0;
@@ -677,13 +694,21 @@ footer{
     border: #f7f7f7;
 }
 
+/******************************** RESPONSIVIDADE ******************************/
+
+
 /* Tablet and Desktop */
 
+
 @media (max-width: 980px) {
+
     .intro {
-    max-width: 80%;
+        max-width: 80%;
     }
 
+    #contact .container{
+        flex-direction: column;
+    }
 
 }
 
@@ -715,23 +740,23 @@ footer{
 
 /************ Mobile ******************/
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 
 /************************* Navbar *****************************/
 
-        .nav__menu{
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        flex-direction: column;
-        width: 100%;
-        overflow: auto;
-        pointer-events: none;
-        opacity: 0;
-        transition: top 0.4s, opacity 0.3s;
-        border: 1px solid black;
-        border-radius: 20px 20px 0 0;
-        background-color: white;
+    .nav__menu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top 0.4s, opacity 0.3s;
+    border: 1px solid black;
+    border-radius: 20px 20px 0 0;
+    background-color: white;
     }
 
     .nav__menu:active{
@@ -798,7 +823,7 @@ footer{
     }
 
 
-    /************************* Home *****************************/
+/************************* Home *****************************/
 
     .intro {
         max-width: 80%;
@@ -806,6 +831,74 @@ footer{
 
     .button-talk{
         justify-content: center;
+    }
+    
+
+/************************* About ***********************************/
+    
+    .about-me{
+        padding: 30px clamp(1rem, 5vw, 122px);
+        border: none;
+    }
+
+    #about h2{
+        padding: 0 20px;
+        margin: 100px 0 30px 0;
+    }
+
+    #about-carousel {
+        padding: 0 20px;
+    }
+
+/************************* Skills *****************************/
+
+    #skills{
+        height: 100%;
+        padding: 4rem 0;
+    }
+
+
+    .skills h2{
+        margin-bottom: 10px;
+        padding: 20px 20px;
+    }
+
+    .skill-details{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+        gap: 30px;
+    }
+
+    .skill-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+/************************* Skills *****************************/    
+    #projects .item{
+        flex-direction: column;
+    }
+
+    #projects .item .left{
+        width: 90%;
+    }
+
+    #projects .item .right{
+        width: 80%;
+        margin-left: 0;
+        margin-top: -150px;
+    }
+
+    #projects .item:nth-child(even){
+        flex-direction: column;
+    }
+
+    #projects .item:nth-child(even) .left{
+        margin-left: 0;       
     }
 
 }
@@ -841,6 +934,18 @@ footer{
     .btn {
     padding: 14px 26px;
     }
+/************ About ******************/
+    .img-scale{
+    width: 2.75rem; 
+    /* height: 3.75rem;  */
+}
+
+/************ Skills ******************/
+
+    .tech-scale, .skill-scale{
+        width: 4.25rem;
+    }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -849,7 +954,6 @@ footer{
         min-width: 280px;
         padding-top: 24px;  /* reduz o espaço superior */
         padding-bottom: 24px; /* se quiser adicionar também */
-        height: auto; /* ou um height fixo, tipo: height: 300px; */
     }
 
     .layout-union, .layout-union2{
@@ -882,9 +986,18 @@ footer{
         font-size: 18px;
 
     }
-
-    
 }
+
+@media screen and (max-width: 450px){
+
+/************************* Skills *****************************/   
+
+    #projects .item .right .buttons{
+        flex-direction: column;
+    }
+}
+
+
 
 @media screen and (max-width: 405px)  {
 
@@ -912,27 +1025,23 @@ footer{
     }
 
     .btn{
-    color:  #F4F1E7;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.32px;
+        color:  #F4F1E7;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.32px;
     }
 
-    #about-carousel {
-    grid-auto-columns: calc((100% / 1) - 12px); /* 2 cards por vez */
+    /************ About ******************/
+
+    .card{
+        padding: 26px;
     }
 
-    
+/************ Skills ******************/
+
 }
-
-/* @media (max-width: 375px) {
-    .home {
-    background-image: none;
-    background-color: white;  Ou outra cor suave
-    }
-} */
 
 
 
